@@ -1,0 +1,9 @@
+#!/bin/bash
+source "${OPENSHIFT_RUBY_DIR}/lib/ruby_context"
+
+set -e
+
+pushd ${OPENSHIFT_REPO_DIR} > /dev/null
+ruby_context "bundle exec rake db:migrate RAILS_ENV=production"
+ruby_context "bundle exec rake db:seed RAILS_ENV=production"
+popd > /dev/null

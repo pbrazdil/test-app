@@ -1,0 +1,18 @@
+<% @posts.each do |post| %>
+    <article class="post">
+      <header>
+        <%= image_tag post.header_image %>
+
+        <h1><%= link_to post.name, post %></h1>
+        <%= link_to 'Edit', edit_post_path(post) %> |
+        <%= link_to 'Destroy', post, method: :delete, data: {confirm: 'Are you sure?'} %>
+        <div class="time-ago"><%= time_ago_in_words(post.created_at) %> ago</div>
+      </header>
+
+
+      <%= raw post.content.truncate(650, :separator => ' ') %>
+      <hr>
+
+    </article>
+
+<% end %>

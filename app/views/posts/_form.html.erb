@@ -1,0 +1,31 @@
+<%= form_for(@post) do |f| %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <form role="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter post name" name="post[name]" value="<%= @post.name %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Header image url</label>
+        <input type="url" class="form-control" id="exampleInputPassword1" placeholder="Enter header image url" name="post[header_image]" value="<%= @post.header_image %>">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">Content</label>
+        <textarea class="form-control" id="exampleInputFile" rows="6" name="post[content]"><%= @post.content %></textarea>
+      </div>
+      <input type="hidden" value="true" name="post[published]">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+<% end %>
