@@ -14,6 +14,6 @@ END_OF_STR
 #end
 
 (1..10).each do |i|
-  Post.create! name: "post number #{i}", content: content, published: true, header_image: '/assets/default_header.jpg'
+  Post.create! name: "post number #{i}", content: content, published: true, header_image: '/default_header.jpg'
 end
 
