@@ -21,10 +21,11 @@ group :doc do
 end
 
 group :production do
+  gem 'puma'
+
   platforms :jruby do
     gem 'activerecord-jdbc-adapter'
     gem 'jdbc-mysql'
-    gem 'puma'
   end
 
   platforms :ruby do
@@ -33,6 +34,5 @@ group :production do
     # gem for webserver is required for application using bundler
     gem 'thin'
     gem 'unicorn'
-    gem 'puma'
   end
 end
