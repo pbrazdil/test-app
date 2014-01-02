@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
     <article class="post">
       <header>
-        <img src="<%= @post.header_image %>" />
+        <img src="<%= post.header_image %>" />
 
         <h1><%= link_to post.name, post %></h1>
         <%= link_to 'Edit', edit_post_path(post) %> |
