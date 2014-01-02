@@ -3,7 +3,6 @@
 <head>
   <title>TestApp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' %>
   <%= stylesheet_link_tag 'application', media: "all", "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tags %>
@@ -13,20 +12,20 @@
   <header id="main-header">
     <nav>
     <% if controller_name == 'posts' && action_name == 'index' %>
-          <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus"></span> add new post</a>
+          <a href="<%= new_post_path %>"> add new post</a>
     <% else %>
-          <a href="<%= root_path %>"><span class="glyphicon glyphicon-chevron-left"></span> back to home</a>
+          <a href="<%= root_path %>"> back to home</a>
     <% end %>
     </nav>
   </header>
 
   <div id="sidebar">
     <div id="user-info">
-      <%= image_tag 'picture.png', :class => 'img-circle' %>
+      <%= image_tag 'user.jpg', :class => 'img-circle' %>
 
-      <h3><a href="#">Petr Brazdil</a></h3>
+      <h3><a href="#">John Doe</a></h3>
 
-      <p>Some description about me, some about me. Some description about me.</p>
+      <p>Some description about my work and my hobbies.</p>
     </div>
   </div>
 
@@ -36,13 +35,8 @@
   </section>
 </div>
 
-<footer>
-  <div class="container">
-    <!--<p class="text-muted credit">Created by <a href="http://petrbrazdil.cz/">Petr Brazdil</a>.</p>-->
-  </div>
-</footer>
+<footer></footer>
 
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= javascript_include_tag 'http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

@@ -1,5 +1,4 @@
 class Post < ActiveRecord::Base
-
   validates_presence_of :name, :content
 
   default_scope ->{ order(:created_at => :desc) }
@@ -12,6 +11,6 @@ class Post < ActiveRecord::Base
 
   private
   def slug
-    name.downcase.gsub(" ", "-")
+    name.downcase.gsub(' ', '-')
   end
 end
